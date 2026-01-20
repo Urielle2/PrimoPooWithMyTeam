@@ -9,7 +9,7 @@ public class Menu {
 
 	//Menu principal
 	public static void menuPrincipal() {
-		String msg = "=== Menu Principal ===\n" + "1. Gérer les produits\n" + "2. Gérer les personnes\n\n" + "0. Quitter\n"
+		String msg = "=== Menu Principal ===\n" + "1. Gérer les produits\n" + "2. Gérer les personnes\n\n" +"3. Créer un compte"+ "0. Quitter\n"
 				+ "Veuillez choisir une option";
 		
 		
@@ -26,6 +26,11 @@ public class Menu {
 			case 2: 
 				//MenuPersonne.menuPersonne();
 				menuPersonne();
+				break;
+				
+			case 3: 
+				//MenuPersonne.menuPersonne();
+				
 				break;
 			case 0:
 				quitter = true;
@@ -121,5 +126,10 @@ public class Menu {
 			
 			}
 		}
+	}
+	
+	//MenuCompte
+	public static void MenuCompte() {
+		
 	}
 }

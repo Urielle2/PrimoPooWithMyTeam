@@ -1,0 +1,22 @@
+package fr.esic.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import fr.esic.library.MyInOutPut;
+import fr.esic.model.Person;
+
+public class CompteController {
+	
+	public static List<Person> comptes = new ArrayList<>();
+	
+	public static void createCompte() {
+		  String numeroCompte = MyInOutPut.saisirTexte("Entrez votre numéro de Compte : ");
+		  Person titulaire = PersonneController.createPersonne();
+		  double solde = MyInOutPut.saisirDouble("Entrez votre solde: ");
+
+		  
+	}
+
+
+}

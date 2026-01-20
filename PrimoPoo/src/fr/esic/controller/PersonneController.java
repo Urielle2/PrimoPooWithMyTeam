@@ -30,6 +30,17 @@ public class PersonneController {
 		  personnes.add(person);
 		 }
 	 
+	 public static Person createPersonne() {
+		  String nom = MyInOutPut.saisirTexte("Entrez le nom de la personne : ");
+		  String prenom = MyInOutPut.saisirTexte("Entrez le prénom : ");
+		  String email = MyInOutPut.saisirTexte("Entrez l'adresse mail : ");
+		  String password = MyInOutPut.saisirTexte("Entrez le mot de passe : ");
+		  Person person = new Person(nom, prenom, email, password);
+		  personnes.add(person);
+		  return person;
+		  
+	 }
+	 
 	 //2-Afficher les personnes
 	 public static void allPerson() {
 		  String data = "";
