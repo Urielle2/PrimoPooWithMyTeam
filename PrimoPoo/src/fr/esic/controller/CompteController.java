@@ -12,7 +12,7 @@ public class CompteController {
 	public static List<Compte> comptes = new ArrayList<>();
 	
 	public static void createCompte() {
-		  String numeroCompte = MyInOutPut.saisirTexte("Entrez votre numéro de Compte : ");
+		  String numeroCompte = MyInOutPut.saisirTexte("Entrez votre numéro de compte : ");
 		  Person titulaire = PersonneController.createPersonne();
 		  double solde = MyInOutPut.saisirDouble("Entrez votre solde: ");
 		  
