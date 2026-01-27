@@ -151,9 +151,11 @@ public class Menu {
 
                     break;
                 case 4:
-
+                	CompteController.depot();
+  
                     break;
                 case 5:
+                	//CompteController.retrait();
 
                     break;
                 case 0:

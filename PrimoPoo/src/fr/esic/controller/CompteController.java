@@ -14,7 +14,7 @@ public class CompteController {
 
     public static void createCompte() {
         Person person = PersonneController.getPersonToUpdate(
-                PersonneController.findByNameContains(MyInOutPut.saisirTexte("Entrez le nom de la personne à mettre à jour : ")));
+        		PersonneController.findByNameContains(MyInOutPut.saisirTexte("Entrez le nom de la personne à mettre à jour : ")));
         double solde = MyInOutPut.saisirDouble("Entrez votre solde: ");
         String numeroCompte = MyInOutPut.saisirTexte("Entrez votre numéro de Compte : ");
         Compte compte = new Compte(numeroCompte, person, solde);
@@ -44,5 +44,29 @@ public class CompteController {
 
         }
     }
+    
+    public static void depot() {
+    	String numeroCompte = MyInOutPut.saisirTexte("Entrez votre numéro de Compte : ");
+    	double montant =  MyInOutPut.saisirDouble("Entrez la somme que vous allez deposer ");
+    	
+    }
+    
+    /*  methode non correct
+    public static void retrait() {
+    	String numeroCompte = MyInOutPut.saisirTexte("Entrez votre numéro de Compte : ");
+    	double montant =  MyInOutPut.saisirDouble("Entrez la somme à retirer"  );
+    	if(montant > 0) {
+    		if (montant < Compte.getSolde()) {
+    			MyInOutPut.afficher("Retrait effectué"  );
+    		}else { 
+    			MyInOutPut.afficher("Retrait impossible" );
+    		}
+    	}else{ 
+    		MyInOutPut.afficher("Retrait impossible" );
+    	}
+    			
+    	
+    }
+    */
 
 }
