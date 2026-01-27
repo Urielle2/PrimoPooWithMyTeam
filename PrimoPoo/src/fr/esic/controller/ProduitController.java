@@ -9,7 +9,7 @@ import fr.esic.model.Produit;
 public class ProduitController {
 
  // Simuler une base de données avec une liste
- // Une liste d'un objet persmet de stocker plusieurs objets de ce type
+ // Une liste d'un objet permet de stocker plusieurs objets de ce type
  // Les données de la liste seront en mémoire tant que le programme tourne
  // PS : les données seront perdues à la fermeture du programme
  //// car elles ne sont pas persistées dans un fichier ou une base de données
@@ -41,7 +41,7 @@ public class ProduitController {
  }
 
  public static List<Produit> findByName(String nom) {
-  List<Produit> result = new ArrayList<>();
+  List<Produit> result = new ArrayList<>(); // nouvelle liste 
   for (Produit produit : produits) {
    if (produit.getNom().equalsIgnoreCase(nom)) {
     result.add(produit);
@@ -145,12 +145,14 @@ public class ProduitController {
    if (!prixInput.isEmpty()) {
     double newPrix = Double.parseDouble(prixInput);
     produit.setPrix(newPrix);
+    System.out.println(prixInput);
+    System.out.println(newPrix);
    }
    String quantiteInput = MyInOutPut
      .saisirTexte("Entrez la nouvelle quantité du produit (laisser vide pour ne pas changer) : ");
    if (!quantiteInput.isEmpty()) {
     int newQuantite = Integer.parseInt(quantiteInput);
-    produit.setQuantite(newQuantite);
+    produit.setStock(newQuantite);
    }
    MyInOutPut.afficher("Produit mis à jour avec succès. \n" + "Ancienne info produit : " + oldInfo
      + "\n" + "New info produit : " + produit.infoProduit());
@@ -158,6 +160,27 @@ public class ProduitController {
    MyInOutPut.afficher("Mise à jour annulée car aucun produit sélectionné.");
   }
  }
+ 
+ public static void removeProduct() {
+
+		Produit produit = getProductToUpdate(
+				findByNameContains(MyInOutPut.saisirTexte("Entrez le nom du produit à supprimer : ")));
+
+		if (produit != null) {
+
+			String valider = MyInOutPut
+					.saisirTexte("Saisissez OUI pour supprimer ce produit ou NON pour le conserver : ");
+			if (valider.equalsIgnoreCase("oui")) {
+				produits.remove(produit);
+				MyInOutPut.afficher("Produit supprimé avec succès");
+			} else if (valider.equalsIgnoreCase("non")) {
+				MyInOutPut.afficher("Produit conservé dans le catalogue");
+			} else {
+				MyInOutPut.afficher("Commande invalide");
+			}
+		}
+
+	}
 
 }
  
