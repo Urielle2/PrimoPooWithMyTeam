@@ -68,7 +68,7 @@ public class Menu {
                     ProduitController.updateProduct();
                     break;
                 case 5:
-
+                	ProduitController.removeProduct();
                     break;
                 case 0:
                     retour = true;
