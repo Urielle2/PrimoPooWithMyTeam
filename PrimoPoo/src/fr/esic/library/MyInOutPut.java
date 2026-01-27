@@ -1,7 +1,6 @@
 package fr.esic.library;
 
 import javax.swing.JOptionPane;
-import fr.esic.model.Person;
 
 public class MyInOutPut {
 	public static void afficher(String msg) {
