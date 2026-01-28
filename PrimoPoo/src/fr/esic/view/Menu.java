@@ -1,8 +1,8 @@
 package fr.esic.view;
 
-import fr.esic.controller.ProduitController;
 import fr.esic.controller.CompteController;
 import fr.esic.controller.PersonneController;
+import fr.esic.controller.ProduitController;
 import fr.esic.library.MyInOutPut;
 
 public class Menu {
@@ -148,12 +148,17 @@ public class Menu {
                     CompteController.afficherCompte();
                     break;
                 case 3:
-
+                    CompteController.findByNumeroCompte();
                     break;
                 case 4:
-
+                	CompteController.depot();
+  
                     break;
                 case 5:
+                	CompteController.retrait();
+
+                case 6:
+                    CompteController.operationVirement();
 
                     break;
                 case 0:

@@ -45,4 +45,12 @@ public class Compte {
         return "Numéro de Compte " + numeroCompte + ", Titulaire " + titulaire.infoPerson() + ",solde " + solde;
     }
 
+    public boolean retrait(double montant) {
+        return montant < solde;
+    }
+
+    public void depot(double montant) {
+        this.solde += montant;
+    }
+
 }

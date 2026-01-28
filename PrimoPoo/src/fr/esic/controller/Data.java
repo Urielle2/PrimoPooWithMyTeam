@@ -1,17 +1,19 @@
 package fr.esic.controller;
 
-import fr.esic.model.Produit;
+import fr.esic.model.Compte;
 import fr.esic.model.Person;
+import fr.esic.model.Produit;
+
 
 public class Data {
 	public static void init() {
 		Produit P1 = new Produit("Ordinateur Portable", "PC portable haute performance", 1200.00, 10);
-		Produit P2 = new Produit("Smartphone", "Téléphone intélligent ", 800.00, 10);
-		Produit P3 = new Produit("Casque audio", "Casque sans fil avec réduction de bruit", 150.00, 10);
-		Produit P4 = new Produit("Tablette", "Tablette légère pour la navigation et le multimédia", 400.00, 10);
+		Produit P2 = new Produit("Smartphone", "Téléphone intélligent ", 800.00, 12);
+		Produit P3 = new Produit("Casque audio", "Casque sans fil avec réduction de bruit", 150.00, 14);
+		Produit P4 = new Produit("Tablette", "Tablette légère pour la navigation et le multimédia", 400.00, 23);
 		Produit P5 = new Produit("Tablette IOS", "Tablette portable haute performance", 600.00, 10);
-		Produit P6 = new Produit("Tablette Android", "Tablette légère pour la navigation et le multimédia", 300.00, 10);
-		Produit P7 = new Produit("Ordinateur de Bureau", "PC de bureau puissant pour le gaming", 1500.00, 10);
+		Produit P6 = new Produit("Tablette Android", "Tablette légère pour la navigation et le multimédia", 300.00, 25);
+		Produit P7 = new Produit("Ordinateur de Bureau", "PC de bureau puissant pour le gaming", 1500.00, 18);
 		
 		
 		
@@ -33,6 +35,14 @@ public class Data {
 		PersonneController.personnes.add(P8);
 		PersonneController.personnes.add(P9);
 		PersonneController.personnes.add(P10);
-		
+
+		Compte C1 = new Compte("1", P8, 5000.00);
+		Compte C2 = new Compte("2", P9, 3000.00);
+		Compte C3 = new Compte("3", P10, 7000.00);
+
+		CompteController.comptes.add(C1);
+		CompteController.comptes.add(C2);
+		CompteController.comptes.add(C3);
+
 	}
 }
