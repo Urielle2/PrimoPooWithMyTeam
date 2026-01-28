@@ -7,7 +7,6 @@ import fr.esic.controller.PersonneController;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class CompteController {
 
     public static List<Compte> comptes = new ArrayList<>();
@@ -15,11 +14,22 @@ public class CompteController {
     public static void createCompte() {
         Person person = PersonneController.getPersonToUpdate(
                 PersonneController.findByNameContains(MyInOutPut.saisirTexte("Entrez le nom de la personne à mettre à jour : ")));
-        double solde = MyInOutPut.saisirDouble("Entrez votre solde: ");
-        String numeroCompte = MyInOutPut.saisirTexte("Entrez votre numéro de Compte : ");
-        Compte compte = new Compte(numeroCompte, person, solde);
-        comptes.add(compte);
-
+        if (person != null) {
+            Boolean existe = false;
+            for (Compte compte : comptes) {
+                if (person.infoPerson().equals(compte.getTitulaire())) {
+                    existe = true;
+                }
+            }
+            if (!existe) {
+                double solde = MyInOutPut.saisirDouble("Entrez votre solde: ");
+                String numeroCompte = MyInOutPut.saisirTexte("Entrez votre numéro de Compte : ");
+                Compte compte = new Compte(numeroCompte, person, solde);
+                comptes.add(compte);
+            }else{
+                MyInOutPut.afficher("Compte déja existant pour cette personne");
+            }
+        }
     }
 
     public static void createCompteNewUser() {
