@@ -11,7 +11,7 @@ public class Program {
 		Data.init();
 	}
 	public static void main(String[] args) {
-		MyInOutPut.afficher("Bienvenue dans le programme de gestion des produits et des personnes !");
+		// MyInOutPut.afficher("Bienvenue dans le programme de gestion des produits et des personnes !");
 		Menu.menuPrincipal();
 	}
 }
