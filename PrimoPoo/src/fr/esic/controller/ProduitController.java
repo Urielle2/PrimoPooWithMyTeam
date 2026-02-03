@@ -181,6 +181,27 @@ public class ProduitController {
 		}
 
 	}
+ 
+ 
+ //Appliquer une promotion sur un produit entre 2 et 100. PS : pour la saisie entier utiliser la methode MyInOutPut.saisirEntier
+	public static void applyPromotion() {
+		Produit produit = getProductToUpdate(
+				findByNameContains(MyInOutPut.saisirTexte("Entrez le nom du produit pour appliquer une promotion : ")));
+
+		if (produit != null) {
+			int promotion = MyInOutPut
+					.saisirEntier("Entrez le pourcentage de promotion à appliquer (entre 2 et 100) : ");
+			if (promotion >= 2 && promotion <= 100) {
+				produit.setPromotion(promotion);
+				MyInOutPut.afficher("Promotion de " + promotion + "% appliquée au produit : " + produit.getNom());
+			} else {
+				MyInOutPut.afficher("Pourcentage de promotion invalide. Veuillez entrer une valeur entre 2 et 100.");
+			}
+		} else {
+			MyInOutPut.afficher("Aucun produit sélectionné pour appliquer une promotion.");
+		}
+	}
+	
 
 }
  

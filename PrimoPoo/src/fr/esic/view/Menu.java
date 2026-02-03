@@ -45,8 +45,9 @@ public class Menu {
 
 	public static void menuProduit() {
 		String msg = "=== Menu Produit ===\n" + "1. Ajouter un produit\n" + "2. Afficher les produits\n"
-				+ "3. Rechercher un produit\n" + "4. Mettre à jour un produit\n" + "5. Supprimer un produit\n\n"
-				+ "0. Retour au menu principal\n" + "100. Quitter le programme\n " + "Veuillez choisir une option";
+				+ "3. Rechercher un produit\n" + "4. Mettre à jour un produit\n" + "5. Supprimer un produit\n"
+				+ "6. Appliquer une promotion sur un produit\n\n" + "0. Retour au menu principal\n"
+				+ "100. Quitter le programme\n " + "Veuillez choisir une option";
 
 		boolean retour = false;
 
@@ -69,6 +70,9 @@ public class Menu {
 				break;
 			case 5:
 				ProduitController.removeProduct();
+				break;
+			case 6:
+				ProduitController.applyPromotion();
 				break;
 			case 0:
 				retour = true;
@@ -148,7 +152,7 @@ public class Menu {
 				CompteController.afficherCompte();
 				break;
 			case 3:
-				CompteController.findByNumeroCompte();
+				CompteController.afficherCompteTrouve();
 				break;
 			case 4:
 				CompteController.depot();

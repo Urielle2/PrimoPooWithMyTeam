@@ -140,6 +140,15 @@ public class CompteController {
 		}
 		return c;
 	}
+	
+	public static void afficherCompteTrouve() {
+		Compte c = findByNumeroCompte();
+		if (c != null) {
+			MyInOutPut.afficher("Compte trouvé : \n" + c.infoCompte());
+		} else {
+			MyInOutPut.afficher("Compte non trouvé.");
+		}
+	}
 
 	public static Compte findByNumeroCompte(String msg) {
 		String numerodeCompte = MyInOutPut.saisirTexte(msg);
